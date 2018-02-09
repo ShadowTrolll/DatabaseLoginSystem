@@ -21,9 +21,11 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+        bool chain = false;
         string x2 = " ";
         double x3 = new double();
         string td = " ";
+        double res2 = new double();
         public static double ret(double a, double b, string toDo)
         {
             double res = new double();
@@ -48,31 +50,46 @@ namespace WpfApp1
             return res;
 
         }
-        double y = 0.123427;
+
+        double y = 0.12342723112154315346;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string x = (sender as Button).Content.ToString();
-            while (!x.Equals("="))
-            { 
-                if (x.Equals("*") || x.Equals("/") || x.Equals("+") || x.Equals("-"))
-                {
-                    if (y == 0.123427)
-                    { 
-                        if (double.TryParse(x2, out y))
-                        {
-                            lbl2.Content = y;
-                            td = x;
+            if (!x.Equals("C"))
+            {
+                if (!x.Equals("="))
+                { 
+                    if (x.Equals("*") || x.Equals("/") || x.Equals("+") || x.Equals("-"))
+                    {
+                        if (y == 0.12342723112154315346)
+                        { 
+                            if (double.TryParse(x2, out y))
+                            {
+                                lbl2.Content = y;
+                            }
                         }
+                        td = x;
                     }
+                    lbl.Content += x;
+                    x2 = x;
+                } else if (double.TryParse(x2, out x3) && !chain)
+                { 
+                    res2 = ret(x3, y, td);
+                    lbl.Content = res2;
+                    chain = true;
+                } else if (double.TryParse(x2, out x3))
+                {
+                    lbl2.Content = res2;
+                    lbl.Content = ret(res2, x3, td);
+                }
+            } else
+            {
+                chain = false;
+                lbl.Content = "";
+                lbl2.Content = "";
+                y = 0.1234272311215431534;
+            }
 
-            
-                } else lbl.Content += x;
-            x2 = x;
-            }
-            if (double.TryParse(x2, out x3))
-            { 
-                lbl.Content = ret(x3, y, td);
-            }
         }
     }
 }
