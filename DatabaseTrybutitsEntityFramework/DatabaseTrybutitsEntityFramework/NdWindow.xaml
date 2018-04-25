@@ -1,0 +1,28 @@
+﻿<Window x:Class="DatabaseTrybutitsEntityFramework.NdWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DatabaseTrybutitsEntityFramework"
+        mc:Ignorable="d"
+        Title="NdWindow" Height="450" Width="800"
+        Closed="Window_Closed">
+    <Grid>
+        <Label Content="Logged in as:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="28" Width="80"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" Height="28" Width="209" Name="showLoggedUser"/>
+        <Label Content="Password change:" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Width="106" Height="28"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="121,78,0,0" VerticalAlignment="Top" Height="28" Width="160" Name="currPassBox"/>
+        <Label Content="Change username:" HorizontalAlignment="Left" Margin="389,43,0,0" VerticalAlignment="Top" Width="109" Height="28"/>
+        <PasswordBox HorizontalAlignment="Left" Height="28" Margin="503,78,0,0" VerticalAlignment="Top" Width="160" Name="currPass4Name"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="121,111,0,0" VerticalAlignment="Top" Height="28" Width="160" Name="newPassBox"/>
+        <TextBox HorizontalAlignment="Left" Margin="503,111,0,0" VerticalAlignment="Top" Height="28" Width="160" Name="newUsernameBox"/>
+        <Label Content="Current password:" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top"/>
+        <Label Content="New password:" HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top"/>
+        <Label Content="Current password:" HorizontalAlignment="Left" Margin="389,78,0,0" VerticalAlignment="Top"/>
+        <Label Content="New username:" HorizontalAlignment="Left" Margin="389,111,0,0" VerticalAlignment="Top"/>
+        <Button Content="Save changes" HorizontalAlignment="Left" Margin="241,184,0,0" VerticalAlignment="Top" Width="75" Click="savechanges"/>
+        <Button Content="Logout" HorizontalAlignment="Left" Margin="389,184,0,0" VerticalAlignment="Top" Width="75" Click="logout"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="10,184,0,0" VerticalAlignment="Top" Height="32" Width="164" Name="stateInfoLbl"/>
+
+    </Grid>
+</Window>
